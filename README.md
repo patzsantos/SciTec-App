@@ -1,12 +1,13 @@
 # SciTec App
 Welcome to the SciTec App, a secure software developed by Bulwark Systems to check and monitor spacecraft cabin environment parameters inside the International Space Station (ISS). 
 
+## Purpose 
+This is the individual coding output of the team [design document]() developed by Team Bulwark for the Secure Software Development (Computer Science) course of The Unviversity of Essex Online. 
+
 ## Development 
 The program was built using Django 5.0.6 web framework in Python 3.11.9 in the PyCharm 2023.2.6 version. 
 
 ## Security Features
-
-Three of the Open Web Application Security Project (OWASP)'s top ten web application security risks (OWASP, 2021), were referenced to the security attacks SciTec were designed to fight against:  
 
 | OWASP Top 10:2021 Web Application Security Risks   | Attack |
 | ------------------ | ------------- |
@@ -14,30 +15,52 @@ Three of the Open Web Application Security Project (OWASP)'s top ten web applica
 | A07: 2021- Identification and Authentication | Brute Force Attacks |
 | A09:2021- Security Logging and Monitoring Failures| Denial of Service |
 
-SciTec, through the use of Django web framework's built-in security features, is designed to fight off these attacks using the following: 
+Three of the Open Web Application Security Project (OWASP)'s top ten web application security risks (OWASP, 2021), were referenced to prevent security attacks SciTec is designed to fight against through the following mitigations: 
 
 ### Authorisation and Authentication
 
-ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (GDPR, N.D.). Therefore, the application can only be accessed by authorised ISS software security engineers, who will act as the software admin, astronauts, and scientists. 
+ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (GDPR, N.D.). Therefore, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Their access to SciTec is limited depending on their roles.  
 
-**1) Superadmin**- Can create, read, update, and delete account users, groups, and ISS cabin environment health checks.  
-
-**2) Astronauts and Scientists**- Can create, read, update, and delete environment health checks They can view the groups and users, but cannot create, update, and delete them.
-
-**3) Trainees**- They can only view the ISS environment health checks.
+| User   | Authorisation |
+| ------------------ | ------------- |
+| Superusers | Can create, read, update, and delete (CRUD) account users, groups, and ISS cabin environment health checks. |
+| Astronauts and Scientists | Can perform CRUD on environment health checks. They can view the groups and users, but cannot create, update, and delete them. |
+| Trainees| Can only view the ISS environment health checks. |
 
 ### Encryption
 
-Passwords of all users will be secured using the 
+The ISS environment database stored in the db.sqlite file uses django-encrypted-model-fields to encrypt data sourced from python cryptograph library (Python Package Index, 2022). 
 
+### Hashing
 
-## Purpose 
-This is the individual coding output of the team [design document]() developed by Team Bulwark for the Secure Software Development (Computer Science) course of The Unviversity of Essex Online. 
+Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.) 
+
+## How to Run Scitec
+1) Download the Bulwark Systems package that contains the python file and requirements. Make sure that your IDE can run Python 3.11. 
+2) Install requirements ```pip install -r requirements.txt```
+3) Once installed, open your terminal and run ```python3 manage.py runserver```.
+4) Enter the development server at:  http://127.0.0.1:8000/.
+5) Use these credentials to login:
+
+| Username   | Password |
+| ------------------ | ------------- |
+| superuser | admin2024 |
+|  austronaut.trial| user1234 |
+| trainee.trial| user1234 |
+
+Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/edit/main/README.md#authorisation-and-authentication) for the allowed permission for each user you want to try. 
+
+## CRUD Instructions 
+1) 
 
 ## References: 
 
-General Data Protection Regulation (N.D.) Chapter 3 (Art 12-23) Archives. Available from: https://gdpr.eu/tag/chapter-3/ [Accessed 26 May 2024]. 
+Django (N.D.) Password management in Django | Django Documentation | Django. Available from: https://docs.djangoproject.com/en/5.0/topics/auth/passwords/ [Accessed 27 May 2024]. 
 
-Open Web Application Security Project (2021). OWASP Top 10:2021. Available from: https://owasp.org/Top10/ [Accessed 26 May 2024]. 
+General Data Protection Regulation. (N.D.) Chapter 3 (Art 12-23) Archives. Available from: https://gdpr.eu/tag/chapter-3/ [Accessed 26 May 2024]. 
+
+Open Web Application Security Project. (2021). OWASP Top 10:2021. Available from: https://owasp.org/Top10/ [Accessed 26 May 2024]. 
+
+Python Package Index. (2022) django-encrypted-model-fields. Available from: https://pypi.org/project/django-encrypted-model-fields/ [Accessed 27 May 2024]. 
 
 
