@@ -24,8 +24,8 @@ ScitTec App  values the 'Rights of the data subject', in accordance with General
 | User   | Authorisation |
 | ------------------ | ------------- |
 | Superusers | Can create, read, update, and delete (CRUD) account users, groups, and ISS cabin environment health checks. |
-| Astronauts and Scientists | Can perform CRUD on environment health checks. They can view the groups and users, but cannot create, update, and delete them. |
-| Trainees| Can only view the ISS environment health checks. |
+| Astronauts and Scientists | Can perform CRUD on ISS cabin environment health checks. They can view the groups and users, but cannot create, update, and delete them. |
+| Trainees| Can only view the ISS cabin environment health checks. |
 
 ### Encryption
 
@@ -48,10 +48,32 @@ Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (D
 |  austronaut.trial| user1234 |
 | trainee.trial| user1234 |
 
-Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/edit/main/README.md#authorisation-and-authentication) for the allowed permission for each user you want to try. 
+Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/edit/main/README.md#authorisation-and-authentication) for the allowed permission for each user you want to login as. 
 
-## CRUD Instructions 
-1) 
+## CRUD Demonstrations
+### Superuser:
+   
+![Create](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/create.gif)
+Superusers can add users, group, and cabin environment. They can control and assign the authorisations of groups as well. 
+
+![Read](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/read.gif)
+Superusers can view users, groups, and spacecraft cabin environment data. 
+
+![Update](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/update.user.gif)
+Superusers can update users, groups, and spacecraft cabin environment data. 
+
+![Delete](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/delete.gif)
+Superusers can delete users, groups, and spacecraft cabin environment data. 
+
+### Astronauts and scientists:
+
+![CRUD ISS cabin environment, and view users and groups](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/astronaut.gif)
+They can only view users and groups. However, they can perform CRUD on spacecraft cabin environment health checks. 
+
+### Trainees:
+
+![View ISS cabin environment only](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/trainee.gif)
+The users with the least permission. They can only view the data from the ISS cabin health checks. 
 
 ## References: 
 
