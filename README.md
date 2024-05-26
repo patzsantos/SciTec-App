@@ -75,6 +75,13 @@ They can only view users and groups. However, they can perform CRUD on spacecraf
 ![View ISS cabin environment only](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/trainee.gif)
 The users with the least permission. They can only view the data from the ISS cabin health checks. 
 
+## Testing
+
+Unit tests were done using Django's test cases, which according to Python Software Foundation (N.D.), tests definite answers to inserted code in individual units. Test cases were made for urls, models, and views. Tests were revised accordingly when they failed. At present, all tests have passed. 
+
+Linters were ran to improve code as well. The three linters used were pylama, flake8, and pylint. After initial testing, remediations were performed to improve the code. Screenshots of initial testing and the remediations done afterwards can be found in the **test screenshots** folder. 
+
+
 ## References: 
 
 Django (N.D.) Password management in Django | Django Documentation | Django. Available from: https://docs.djangoproject.com/en/5.0/topics/auth/passwords/ [Accessed 27 May 2024]. 
@@ -83,6 +90,12 @@ General Data Protection Regulation. (N.D.) Chapter 3 (Art 12-23) Archives. Avail
 
 Open Web Application Security Project. (2021). OWASP Top 10:2021. Available from: https://owasp.org/Top10/ [Accessed 26 May 2024]. 
 
-Python Package Index. (2022) django-encrypted-model-fields. Available from: https://pypi.org/project/django-encrypted-model-fields/ [Accessed 27 May 2024]. 
+Python Package Index. (2022) django-encrypted-model-fields. Available from: https://pypi.org/project/django-encrypted-model-fields/ [Accessed 27 May 2024].
+
+Python Software Foundation. (N.D.) unittest- Unit testing framework- Python 3.12.3 documentation. Available from: https://docs.python.org/3/library/unittest.html [Accessed 27 May 2024]. 
+
+## Code Credits 
+
+
 
 
