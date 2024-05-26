@@ -96,6 +96,31 @@ Python Software Foundation. (N.D.) unittest- Unit testing framework- Python 3.12
 
 ## Code Credits 
 
+Project was made by following this video: 
+
+Rooney, J.W. (2022) Django Rest Framework for Beginners - Simple CRUD API. Available from: https://www.youtube.com/watch?v=OJdFj5hPAKs&t=8s [Accessed 22 May 2024]. 
+
+---- 
+Circumeo (2023) Encrypting Data in a Django Application. Available from: https://circumeo.io/blog/entry/encrypting-data-in-a-django-application/ [Accessed 26 May 2024].
+
+Gregory & sunwarr10r. (2019) How to change site title, site header and index title
+in Django Admin?. Available from: https://stackoverflow.com/a/36251770 [Accessed 25 May 2024]
+
+Kumar, M. & Parmentier, B. (2023) How do I change the text "Thanks for spending some quality time with the Web site today." in Django?. Available  https://stackoverflow.com/a/65907636 [Accessed 23 May 2024]
+
+Lorenz, T. (2019) Proper Unit Tests for Your Django Views.
+Available from: https://blog.bitlabstudio.com/proper-unit-tests-for-your-django-views-b4a1730a922e
+[Accessed on 25 May 2024].
+
+OpenAI. 2024. ChatGPT (May 2024 version). Available at: https://www.openai.com/chatgpt [Accessed 25 May 2024).
+
+Ridgway, A. (2021) Django Testing for Beginners. Available from:
+https://alicecampkin.medium.com/django-testing-for-beginners-146bd285a178
+[Accessed 25 May 2024].
+
+
+
+
 
 
 
