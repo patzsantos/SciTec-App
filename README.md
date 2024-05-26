@@ -15,9 +15,9 @@ The program was built using Django 5.0.6 web framework in Python 3.11.9 in the P
 | A07: 2021- Identification and Authentication | Brute Force Attacks |
 | A09:2021- Security Logging and Monitoring Failures| Denial of Service |
 
-Three of the Open Web Application Security Project (OWASP)'s top ten web application security risks (OWASP, 2021), were referenced to prevent security attacks SciTec is designed to fight against through the following mitigations: 
+Three of the Open Web Application Security Project (OWASP) top ten web application security risks (OWASP, 2021), were referenced to prevent security attacks SciTec is designed to fight against through the following mitigations: 
 
-### Authorisation and Authentication
+**Authorisation and Authentication**
 
 ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (GDPR, N.D.). Therefore, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Their access to SciTec is limited depending on their roles.  
 
@@ -27,11 +27,11 @@ ScitTec App  values the 'Rights of the data subject', in accordance with General
 | Astronauts and Scientists | Can perform CRUD on ISS cabin environment health checks. They can view the groups and users, but cannot create, update, and delete them. |
 | Trainees| Can only view the ISS cabin environment health checks. |
 
-### Encryption
+**Encryption**
 
 The ISS environment database stored in the db.sqlite file uses django-encrypted-model-fields to encrypt data sourced from python cryptograph library (Python Package Index, 2022). 
 
-### Hashing
+**Hashing**
 
 Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.) 
 
@@ -51,7 +51,7 @@ Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (D
 Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/edit/main/README.md#authorisation-and-authentication) for the allowed permission for each user you want to login as. 
 
 ## CRUD Demonstrations
-### Superuser:
+**Superuser:**
    
 ![Create](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/create.gif)
 Superusers can add users, group, and cabin environment. They can control and assign the authorisations of groups as well. 
@@ -65,12 +65,12 @@ Superusers can update users, groups, and spacecraft cabin environment data.
 ![Delete](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/delete.gif)
 Superusers can delete users, groups, and spacecraft cabin environment data. 
 
-### Astronauts and scientists:
+**Astronauts and scientists:**
 
 ![CRUD ISS cabin environment, and view users and groups](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/astronaut.gif)
 They can only view users and groups. However, they can perform CRUD on spacecraft cabin environment health checks. 
 
-### Trainees:
+**Trainees:**
 
 ![View ISS cabin environment only](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/trainee.gif)
 The users with the least permission. They can only view the data from the ISS cabin health checks. 
