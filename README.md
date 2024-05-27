@@ -22,7 +22,7 @@ Django is the chosen framework since it follows the Model-View-Controller (MVC) 
 | A07: 2021- Identification and Authentication | Brute Force Attacks |
 | A09:2021- Security Logging and Monitoring Failures| Denial of Service |
 
-Three of the Open Web Application Security Project (OWASP) top ten web application security risks (Open Web Application Security Project, 2021), were identifited to classify the security attacks SciTec is designed to defend against. With the help of OWASP, these following mitigations are implemented in the SciTec app: 
+Three of the Open Web Application Security Project (OWASP) top ten web application security risks from 2021(Open Web Application Security Project, 2021), were identifited to classify the security attacks and their mitigations that SciTec is designed to defend against. With the help of OWASP, these following security features are implemented in the SciTec app: 
 
 **Authorisation and Authentication**
 
@@ -39,13 +39,13 @@ Authentication is done through login of only those with authorised usernames and
 
 **Encryption**
 
-The ISS environment database stored in the **db.sqlite** file uses ```django-encrypted-model-fields``` to encrypt data sourced from Python cryptograph library (Python Package Index, 2022). When checking the sqlite3 database in the project, the parameter is not displayed in plain text form to protect the data from API injections. 
+The ISS environment database stored in the **db.sqlite** file uses ```django-encrypted-model-fields``` that is sourced from Python cryptograph library (Python Package Index, 2022), to encrypt data. When checking the sqlite3 database in the project, the parameter is not displayed in plain text form to protect the data from API injections. 
 
 **Event Monitoring** 
 
-CRUD, login, and request events are stored and can be monitored using ```django-easy-edit``` from soynatan (2024). This event monitoring tool is called **Easy Audit Application**. This security feature can alert the superuser of any suspicious activities, such as Denial of Service, during login and processing of records in SciTec.
+CRUD, login, and request events are stored and can be monitored using ```django-easy-edit``` from soynatan (2024). This event monitoring tool is called **Easy Audit Application**. This security feature can alert the superuser of any suspicious activities during login and processing of records in SciTec that can lead to Denial of Service attacks on the SciTec app.
 
-_Note: This security feature was added last, and is therefore not included in the demo .gifs in [CRUD demonstrations](https://github.com/patzsantos/scitecapp/edit/main/README.md#crud-demonstrations). Rest assured, the Easy Audit Application is included in the final version of the application, as seen from the screenshot below._
+_Note: This security feature was added last, and therefore cannot be seen in the interface of the software in the demo .gifs in [CRUD demonstrations](https://github.com/patzsantos/scitecapp/edit/main/README.md#crud-demonstrations). Rest assured, the Easy Audit Application is included in the final version of the application, as seen from the screenshot below._
 ![Event Monitoring in the final version of the application](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/event%20monitoring.png)
 
 **Hashing Passwords**
@@ -56,10 +56,10 @@ All levels of user privileges do not have access to the plain text form of the p
 
 1) Download the Bulwark Systems package that contains the Python file and requirements. There are two main project folders, namely **cabin** and **scitec**. Make sure that your IDE can run Python 3.11. 
 2) Install requirements
-   ```pip install -r requirements.txt```
+   ```pip install -r requirements.txt```.
 4) Run your virtual environment
 ```- virtualenv --version```
-``` virtualenv my_env```
+``` virtualenv my_env```.
 4) Once installed, open your terminal and run
 ```python3 manage.py runserver```.
 5) Enter the development server at:  http://127.0.0.1:8000/.
