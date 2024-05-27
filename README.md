@@ -71,7 +71,7 @@ All levels of user privileges do not have access to the plain text form of the p
 |  austronaut.trial| user1234 |
 | trainee.trial| user1234 |
 
-Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/edit/main/README.md#authorisation-and-authentication) for the allowed permissions of each user you want to login as. 
+Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/blob/main/README.md#security-features) of the Security Features section for the allowed permissions of each user you want to login as. 
 
 ## CRUD Demonstrations
 
