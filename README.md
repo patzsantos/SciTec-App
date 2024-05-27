@@ -4,11 +4,12 @@ Welcome to the SciTec App, a secure software developed by Bulwark Systems to che
 ## Purpose 
 This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) course of The Unviversity of Essex Online.
 
-Scrum solo, a method wherein only a sole developer implements all the tasks during code development ( (Moyo & Mnkandla. 2020) was implemented in the creation of this application. Therefore, it is important to note that some changes from the initial design proposal were applied to this version of SciTec. 
+Scrum solo, a method wherein only a sole developer implements all the tasks during code development (Moyo & Mnkandla. 2020) was implemented in the creation of this application. Therefore, it is important to note that some changes from the initial design proposal were applied to this version of SciTec. 
 
 ## Development 
-The program was built using Django 5.0.6 web framework in Python 3.11.9 in the PyCharm 2023.2.6 version. 
-The reasoning behind choosing Django is that it follows the Model-View-Controller (MVC) structure discussed by Pillai (2017), though not exactly the same. Django does not use the exact MVC terminology, since their framework is more commonly as MTV for Model-Template-View. However, it applies the same logic since Django (N.D.a) discusses that view shows the page from the URL, templates present data, and the controller serves as the program dispatching to request the view. 
+The program was built using **Django 5.0.6** web framework in **Python 3.11.9** in the **PyCharm 2023.2.6** version IDE. 
+
+Django is the chose framework since it follows the Model-View-Controller (MVC) structure discussed by Pillai (2017), though not exactly the same. Django does not use the MVC terminology, since their framework is more commonly as MTV for Model-Template-View. However, it applies the same logic since Django (N.D.a) discusses that view shows the page from the URL, templates present data, and the controller serves as the program dispatching to request the view. 
 
 ## Security Features
 
@@ -18,11 +19,11 @@ The reasoning behind choosing Django is that it follows the Model-View-Controlle
 | A07: 2021- Identification and Authentication | Brute Force Attacks |
 | A09:2021- Security Logging and Monitoring Failures| Denial of Service |
 
-Three of the Open Web Application Security Project (OWASP) top ten web application security risks (OWASP, 2021), were referenced to prevent security attacks SciTec is designed to fight against through the following mitigations: 
+Three of the Open Web Application Security Project (OWASP) top ten web application security risks (Open Web Application Security Project, 2021), were referenced to prevent security attacks SciTec is designed to fight against through the following mitigations: 
 
 **Authorisation and Authentication**
 
-ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (GDPR, N.D.). To protect the personal data of users and API injections, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Authentication is done through login using authorised usernames and passwords. Privileges of different user groups are granted based on their account type, as seen in the table below: 
+ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (General Data Protection Regulation, N.D.). To protect the personal data of users and API injections, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Authentication is done through login using authorised usernames and passwords. Privileges of different user groups are granted based on their account type, as seen in the table below: 
 
 
 | User   | Authorisation |
@@ -44,7 +45,7 @@ _Note: This security feature was added last, and is therefore not included in th
 
 **Hashing Passwords**
 
-Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.) to prevent exposure of sensitive data that can lead to unauthorised access to Scitec due to Brute Force Attacks. All levels of user privileges do not have access to the string form of the passwords, including their own. 
+Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.b) to prevent exposure of sensitive data that can lead to unauthorised access to Scitec due to Brute Force Attacks. All levels of user privileges do not have access to the string form of the passwords, including their own. 
 
 ## How to Run Scitec
 1) Download the Bulwark Systems package that contains the python file and requirements. Make sure that your IDE can run Python 3.11. 
@@ -101,15 +102,35 @@ The users with the least permission. They can only view the data from the ISS ca
 
 ## Testing
 
-Unit tests were done using Django's test cases, which according to Python Software Foundation (N.D.), tests definite answers to inserted code in individual units. Test cases were made for urls, models, and views. Tests were revised accordingly when they failed. At present, all tests have passed. They can be found in the test folders in the cabin and scitec projects. 
+Unit tests were done using **Django test cases**, which according to Python Software Foundation (N.D.), tests definite answers to inserted code in individual units. Test cases were made for urls, models, and views. Tests were revised accordingly when they failed. At present, all tests have passed. They can be found in the test folders in the cabin and scitec projects. 
 
-Linters were ran to improve code as well. The three linters used were pylama, flake8, and pylint. After initial testing, remediations were performed to improve the code. Screenshots of initial testing and the remediations done afterwards can be found in the **test screenshots** folder. 
+Cabin folder test case results: 
+![cabin test](https://github.com/patzsantos/scitecapp/blob/main/Testing%20Documentation/django%20cabin%20test.png)
 
+Scitec folder test case results: 
+![scitec test](https://github.com/patzsantos/scitecapp/blob/main/Testing%20Documentation/django%20scitec%20test.png)
+
+Linters were ran to improve code as well. The three linters used were **pylama, flake8,** and **pylint**. After initial testing, remediations were performed to improve the code. Screenshots of initial testing and the remediations done afterwards can be found in the 
+[Testing Documentation](https://github.com/patzsantos/scitecapp/tree/main/Testing%20Documentation) folder. 
+
+## Future Improvements
+
+- Encrypt usernames in the database
+- Use multi factor authentication during login
+- Implement lock outs after a maximum of 3 failed attempts
+- Write more unittests to ensure that the code logic is working correctly
+- Aim for higher linter code rating
+
+## Disclaimer
+
+Though presented as a secure application, SciTec is a postgraduate requirement, not an actual program, please use any part of this code cautiously. 
 
 
 ## References: 
 
-Django (N.D.) Password management in Django | Django Documentation | Django. Available from: https://docs.djangoproject.com/en/5.0/topics/auth/passwords/ [Accessed 27 May 2024]. 
+Django (N.D.a) FAQ: General | Django documentation. Available from: https://docs.djangoproject.com/en/5.0/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names [Accessed 27 May 2024]. 
+
+Django (N.D.b) Password management in Django | Django Documentation | Django. Available from: https://docs.djangoproject.com/en/5.0/topics/auth/passwords/ [Accessed 27 May 2024]. 
 
 General Data Protection Regulation. (N.D.) Chapter 3 (Art 12-23) Archives. Available from: https://gdpr.eu/tag/chapter-3/ [Accessed 26 May 2024]. 
 
@@ -138,11 +159,11 @@ Lorenz, T. (2019) Proper Unit Tests for Your Django Views.
 Available from: https://blog.bitlabstudio.com/proper-unit-tests-for-your-django-views-b4a1730a922e
 [Accessed on 25 May 2024].
 
-Moyo, S. & Mnkandla, E. (2020) A Novel Lightweight Solo Software Development Methodology With Optimum Security Practices. IEEE Access 8: 33735-33747. DOI: http://dx.doi.org/10.1109/ACCESS.2020.2971000. [Accessed 27 May 2024].
+Moyo, S. & Mnkandla, E. (2020) A Novel Lightweight Solo Software Development Methodology With Optimum Security Practices. _IEEE Access_ 8: 33735-33747. DOI: http://dx.doi.org/10.1109/ACCESS.2020.2971000. [Accessed 27 May 2024].
 
 OpenAI. 2024. ChatGPT (May 2024 version). Available at: https://www.openai.com/chatgpt [Accessed 25 May 2024).
 
-Pillai, A.B. (2017) Software Architecture with Python: Design and architect highly scalable, robust, clean, and high performance applications in Python. 1st ed. Birmingham, UK: Packt Publishing. Available from: https://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN=1513359&site=ehost-liv [Accessed 30 March 2024].
+Pillai, A.B. (2017) Software Architecture with Python: Design and architect highly scalable, robust, clean, and high performance applications in Python. 1st ed. Birmingham, UK: Packt Publishing. Available from: https://learning.oreilly.com/library/view/software-architecture-with/9781786468529/?sso_link=yes&sso_link_from=university-of-essex [Accessed 27 May 2024].
 
 Ridgway, A. (2021) Django Testing for Beginners. Available from:
 https://alicecampkin.medium.com/django-testing-for-beginners-146bd285a178
