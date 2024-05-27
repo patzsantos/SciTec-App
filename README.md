@@ -1,15 +1,18 @@
 # SciTec App
-Welcome to the SciTec App, a secure software developed by Bulwark Systems to check and monitor the spacecraft cabin environment inside the International Space Station (ISS).
+
+Welcome to the **SciTec App**, a secure software developed by Bulwark Systems. This application is designed for the use of scientists and astronauts in charge of checking and monitoring the spacecraft cabin environment inside the International Space Station (ISS). This data can be simultaneously relayed to the different space stations on Earth who have authorised access to the SciTec app. 
 
 ## Purpose 
-This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) course of The Unviversity of Essex Online.
 
-Scrum solo, a method wherein only a sole developer implements all the tasks during code development (Moyo & Mnkandla. 2020) was implemented in the creation of this application. Therefore, it is important to note that some changes from the initial design proposal were applied to this version of SciTec. 
+This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) postgraduate certificate course of The Unviversity of Essex Online.
+
+Scrum solo, a method wherein only a sole developer implements all the tasks during code development (Moyo & Mnkandla. 2020), was implemented in the creation of this application. Therefore, it is important to take note that some changes from the initial design proposal were applied to this version of SciTec. 
 
 ## Development 
-The program was built using **Django 5.0.6** web framework in **Python 3.11.9** in the **PyCharm 2023.2.6** version IDE. 
 
-Django is the chose framework since it follows the Model-View-Controller (MVC) structure discussed by Pillai (2017), though not exactly the same. Django does not use the MVC terminology, since their framework is more commonly as MTV for Model-Template-View. However, it applies the same logic since Django (N.D.a) discusses that view shows the page from the URL, templates present data, and the controller serves as the program dispatching to request the view. 
+The program was developedt using **Django 5.0.6** web framework in **Python 3.11.9** in the **PyCharm 2023.2.6** version IDE. 
+
+Django is the chosen framework since it follows the Model-View-Controller (MVC) structure discussed by Pillai (2017), though not exactly the same. Django does not use the MVC terminology, since their framework is more commonly known as MTV, for **Model-Template-View**. However, it applies the same logic since Django (N.D.a) discusses that the view shows the page from the URL, the templates present data, and the controller serves as the program dispatching to request the view. 
 
 ## Security Features
 
@@ -19,36 +22,39 @@ Django is the chose framework since it follows the Model-View-Controller (MVC) s
 | A07: 2021- Identification and Authentication | Brute Force Attacks |
 | A09:2021- Security Logging and Monitoring Failures| Denial of Service |
 
-Three of the Open Web Application Security Project (OWASP) top ten web application security risks (Open Web Application Security Project, 2021), were referenced to prevent security attacks SciTec is designed to fight against through the following mitigations: 
+Three of the Open Web Application Security Project (OWASP) top ten web application security risks (Open Web Application Security Project, 2021), were identifited to classify the security attacks SciTec is designed to defend against. With the help of OWASP, these following mitigations are implemented in the SciTec app: 
 
 **Authorisation and Authentication**
 
-ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (General Data Protection Regulation, N.D.). To protect the personal data of users and API injections, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Authentication is done through login using authorised usernames and passwords. Privileges of different user groups are granted based on their account type, as seen in the table below: 
+ScitTec App  values the _'Rights of the data subject'_, in accordance with General Data Protection Regulation (GDPR) Chapter 3 (General Data Protection Regulation, N.D.). To protect the personal data of users, as well as API injections, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. 
+
+Authentication is done through login of only those with authorised usernames and passwords. The privileges of different user groups are granted based on their account type, as seen in the table below: 
 
 
 | User   | Authorisation |
 | ------------------ | ------------- |
-| Superusers | Can create, read, update, and delete (CRUD) account users, groups, and ISS cabin environment health checks. They are the only users with access to the Easy Audit Application, which is used for event monitoring. |
-| Astronauts and Scientists | Can perform CRUD on ISS cabin environment health checks. They can view the groups and users, but cannot create, update, and delete them. |
-| Trainees| Can only view the ISS cabin environment health checks. |
+| Superusers | They can create, read, update, and delete (CRUD) account users, groups, and ISS cabin environment health checks. They are the only users with access to the Easy Audit Application, which is used for event monitoring. They are also the only ones who can manage the user database. |
+| Astronauts and Scientists | They can perform CRUD on ISS cabin environment health checks. They can view the groups and users, but cannot create, update, and delete them. |
+| Trainees| They can only view the ISS cabin environment health checks. |
 
 **Encryption**
 
-The ISS environment database stored in the db.sqlite file uses django-encrypted-model-fields to encrypt data sourced from python cryptograph library (Python Package Index, 2022). When checking the sqlite3 database in the project, the parameter is not displayed in plain form to protect the data from API injections. 
+The ISS environment database stored in the **db.sqlite** file uses ```django-encrypted-model-fields``` to encrypt data sourced from Python cryptograph library (Python Package Index, 2022). When checking the sqlite3 database in the project, the parameter is not displayed in plain text form to protect the data from API injections. 
 
 **Event Monitoring** 
 
-CRUD, login, and request events are stored and can be monitored using ```django-easy-edit``` from soynatan (2024). This security feature can alert the superuser of any suspicious activities, such as Denial of Service, during login and processing of records in SciTec.
+CRUD, login, and request events are stored and can be monitored using ```django-easy-edit``` from soynatan (2024). This event monitoring tool is called **Easy Audit Application**. This security feature can alert the superuser of any suspicious activities, such as Denial of Service, during login and processing of records in SciTec.
 
-_Note: This security feature was added last, and is therefore not included in the demo .gifs in [CRUD demonstrations(https://github.com/patzsantos/scitecapp/edit/main/README.md#crud-demonstrations). Rest assured, they are in included in the final version of the application._
+_Note: This security feature was added last, and is therefore not included in the demo .gifs in [CRUD demonstrations](https://github.com/patzsantos/scitecapp/edit/main/README.md#crud-demonstrations). Rest assured, the Easy Audit Application is included in the final version of the application, as seen from the screenshot below._
 ![Event Monitoring in the final version of the application](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/event%20monitoring.png)
 
 **Hashing Passwords**
 
-Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.b) to prevent exposure of sensitive data that can lead to unauthorised access to Scitec due to Brute Force Attacks. All levels of user privileges do not have access to the string form of the passwords, including their own. 
+All levels of user privileges do not have access to the plain text form of the passwords, including their own. This is because Django hashes passwords through SHA-256 using the PBKDF2 algorithm (Django, N.D.b). This secure hashing of passwords prevents the exposure of sensitive data that can eventually lead to unauthorised access of the Scitec app due to Brute Force Attacks. 
 
 ## How to Run Scitec
-1) Download the Bulwark Systems package that contains the python file and requirements. Make sure that your IDE can run Python 3.11. 
+
+1) Download the Bulwark Systems package that contains the Python file and requirements. There are two main project folders, namely **cabin** and **scitec**. Make sure that your IDE can run Python 3.11. 
 2) Install requirements
    ```pip install -r requirements.txt```
 4) Run your virtual environment
@@ -65,44 +71,46 @@ Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (D
 |  austronaut.trial| user1234 |
 | trainee.trial| user1234 |
 
-Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/edit/main/README.md#authorisation-and-authentication) for the allowed permission for each user you want to login as. 
+Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/edit/main/README.md#authorisation-and-authentication) for the allowed permissions of each user you want to login as. 
 
 ## CRUD Demonstrations
 
 **Superuser:**
 
-1) Create: Superusers can add users, group, and cabin environment. They can control and assign the authorisations of groups as well.
+_1) Create:_ Superusers can add users, group, cabin environment, and range. They are the only users who can control and assign the authorisations of groups. They are also the only ones who can manage the user database. 
 
 ![Create](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/create.gif)
 
-2) Read: Superusers can view users, groups, and spacecraft cabin environment data. As mentioned in the [Security Features- Event Monitoring](https://github.com/patzsantos/scitecapp/edit/main/README.md#security-features) section, only the superusers can view the event monitoring application called 'Easy Audit'.
+_2) Read:_ Superusers can view users, groups, and spacecraft cabin environment data. As mentioned in the [Security Features- Event Monitoring](https://github.com/patzsantos/scitecapp/edit/main/README.md#security-features) section, only the superusers can view the event monitoring application called 'Easy Audit'.
    
 ![Read](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/read.gif)
 
-3) Update: Superusers can update users, groups, and spacecraft cabin environment data.
+_3) Update:_ Superusers can update users, groups, and spacecraft cabin environment data. 
 
 ![Update](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/update.user.gif)
 
-4) Delete: Superusers can delete users, groups, and spacecraft cabin environment data.
+_4) Delete:_ Superusers can delete users, groups, and spacecraft cabin environment data. 
    
 ![Delete](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/delete.gif)
 
 
 **Astronauts and scientists:**
 
-Astronauts and scientists can only view users and groups. However, they can perform CRUD on spacecraft cabin environment health checks so that they can log and monitor the parameters and data. 
+Astronauts and scientists can only view users and groups. However, they can perform CRUD on spacecraft cabin environment health checks so that they can log and monitor the parameters and data onboard the ISS. 
 
 ![CRUD ISS cabin environment, and view users and groups](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/astronaut.gif)
 
 **Trainees:**
 
-The users with the least permission. They can only view the data from the ISS cabin health checks. 
+Trainees are the users with the least permission. They can only view the data from the ISS cabin health checks. 
 
 ![View ISS cabin environment only](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/trainee.gif)
 
 ## Testing
 
-Unit tests were done using **Django test cases**, which according to Python Software Foundation (N.D.), tests definite answers to inserted code in individual units. Test cases were made for urls, models, and views. Tests were revised accordingly when they failed. At present, all tests have passed. They can be found in the test folders in the cabin and scitec projects. 
+Unit tests were done using **Django test cases**, which according to Python Software Foundation (N.D.), tests definite answers to inserted code in individual units. Test cases were written and run for **cabin project _urls and models_,** and **scitec project _views_**. Tests were revised accordingly when they failed. 
+
+Upon deployment of the software, all tests have passed. Proofs of successfully ran cabin and scitec tests can be found in the [Testing Documentation](https://github.com/patzsantos/scitecapp/tree/main/Testing%20Documentation) folder, but are attached here as well: 
 
 Cabin folder test case results: 
 ![cabin test](https://github.com/patzsantos/scitecapp/blob/main/Testing%20Documentation/django%20cabin%20test.png)
@@ -110,21 +118,23 @@ Cabin folder test case results:
 Scitec folder test case results: 
 ![scitec test](https://github.com/patzsantos/scitecapp/blob/main/Testing%20Documentation/django%20scitec%20test.png)
 
-Linters were ran to improve code as well. The three linters used were **pylama, flake8,** and **pylint**. After initial testing, remediations were performed to improve the code. Screenshots of initial testing and the remediations done afterwards can be found in the 
+Linters were also ran to improve code. The three linters used were **pylama, flake8,** and **pylint**. After the initial testing, remediations were performed to further improve the code quality. Pylama and flake8 were more focused on coding style and structure. Both pylama and flake8 tests were cleared. Pylint was more time-consuming. Unfortunately, due to time constraints, the developer was unable to significantly raise the code rating of the cabin project. 
+
+Screenshots of initial linter testing, and the remediations performed afterwards, can be found in the 
 [Testing Documentation](https://github.com/patzsantos/scitecapp/tree/main/Testing%20Documentation) folder. 
 
-## Future Improvements
+## Future Improvements to the Code
 
-- Encrypt usernames in the database
-- Use multi factor authentication during login
-- Implement lock outs after a maximum of 3 failed attempts
+- Encrypt usernames in the database - This strengthens authorisation and authentication as this extra security layer would prevent exposure of usernames, and is in line with GDPR Chapter 3, 'Rights of the data subject' (GDPR, N.D.)
+- Use multi factor authentication during login- Based on the team design, this is an extra layer of security that will prevent Brute Force Attacks, as it implements various levels of authentication.
+- Implement locking out of users after a maximum of 3 failed login attempts- Another mitigation based on the team design that is designed to fight off Brute Force Attacks once suspicious user login or activity is detected during event monitoring. 
 - Write more unittests to ensure that the code logic is working correctly
 - Aim for higher linter code rating
+- Run other linter tests, such as mccabe, to assess code complexity. 
 
 ## Disclaimer
 
-Though presented as a secure application, SciTec is a postgraduate requirement, not an actual program, please use any part of this code cautiously. 
-
+Though presented as a secure application, SciTec is a postgraduate requirement, not an actual program. When using any part of the code, please use it with caution. 
 
 ## References: 
 
