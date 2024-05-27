@@ -1,0 +1,20 @@
+<!--Code from Kumar, M. & Parmentier, B. (2023)
+How do I change the text "Thanks for spending some quality time with the Web site today." in Django?.
+Available  https://stackoverflow.com/a/65907636 [Accessed 23 May 2024].}-->
+
+
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="{% url 'admin:index' %}">{% translate 'Home' %}</a></div>{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+
+<p>{% translate "Thank you for using the SciTec App." %}</p>
+
+<p><a href="{% url 'admin:index' %}">{% translate 'Log in once more.' %}</a></p>
+
+{% endblock %}
+
