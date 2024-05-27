@@ -2,7 +2,7 @@
 Welcome to the SciTec App, a secure software developed by Bulwark Systems to check and monitor the spacecraft cabin environment inside the International Space Station (ISS).
 
 ## Purpose 
-This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) course of The Unviversity of Essex Online. 
+This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) course of The Unviversity of Essex Online.
 
 ## Development 
 The program was built using Django 5.0.6 web framework in Python 3.11.9 in the PyCharm 2023.2.6 version. 
@@ -19,7 +19,7 @@ Three of the Open Web Application Security Project (OWASP) top ten web applicati
 
 **Authorisation and Authentication**
 
-ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (GDPR, N.D.). To protect the personal data of users, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Authentication is done through login using authorised usernames and passwords. Privileges of different user groups are granted based on their account type, as seen in the table below: 
+ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (GDPR, N.D.). To protect the personal data of users and API injections, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Authentication is done through login using authorised usernames and passwords. Privileges of different user groups are granted based on their account type, as seen in the table below: 
 
 
 | User   | Authorisation |
@@ -59,35 +59,44 @@ Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (D
 Please refer to the [Authorisation and Authentication](https://github.com/patzsantos/scitecapp/edit/main/README.md#authorisation-and-authentication) for the allowed permission for each user you want to login as. 
 
 ## CRUD Demonstrations
-**Superuser:**
-   
-![Create](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/create.gif)
-Superusers can add users, group, and cabin environment. They can control and assign the authorisations of groups as well. 
 
+**Superuser:**
+
+1) Create: Superusers can add users, group, and cabin environment. They can control and assign the authorisations of groups as well.
+
+![Create](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/create.gif)
+
+2) Read: Superusers can view users, groups, and spacecraft cabin environment data. As mentioned in the [Security Features- Event Monitoring](https://github.com/patzsantos/scitecapp/edit/main/README.md#security-features) section, only the superusers can view the event monitoring application called 'Easy Audit'.
+   
 ![Read](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/read.gif)
-Superusers can view users, groups, and spacecraft cabin environment data. 
+
+3) Update: Superusers can update users, groups, and spacecraft cabin environment data.
 
 ![Update](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/update.user.gif)
-Superusers can update users, groups, and spacecraft cabin environment data. 
 
+4) Delete: Superusers can delete users, groups, and spacecraft cabin environment data.
+   
 ![Delete](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/delete.gif)
-Superusers can delete users, groups, and spacecraft cabin environment data. 
+
 
 **Astronauts and scientists:**
 
+Astronauts and scientists can only view users and groups. However, they can perform CRUD on spacecraft cabin environment health checks so that they can log and monitor the parameters and data. 
+
 ![CRUD ISS cabin environment, and view users and groups](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/astronaut.gif)
-They can only view users and groups. However, they can perform CRUD on spacecraft cabin environment health checks. 
 
 **Trainees:**
 
-![View ISS cabin environment only](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/trainee.gif)
 The users with the least permission. They can only view the data from the ISS cabin health checks. 
+
+![View ISS cabin environment only](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/trainee.gif)
 
 ## Testing
 
-Unit tests were done using Django's test cases, which according to Python Software Foundation (N.D.), tests definite answers to inserted code in individual units. Test cases were made for urls, models, and views. Tests were revised accordingly when they failed. At present, all tests have passed. 
+Unit tests were done using Django's test cases, which according to Python Software Foundation (N.D.), tests definite answers to inserted code in individual units. Test cases were made for urls, models, and views. Tests were revised accordingly when they failed. At present, all tests have passed. They can be found in the test folders in the cabin and scitec projects. 
 
 Linters were ran to improve code as well. The three linters used were pylama, flake8, and pylint. After initial testing, remediations were performed to improve the code. Screenshots of initial testing and the remediations done afterwards can be found in the **test screenshots** folder. 
+
 
 
 ## References: 
