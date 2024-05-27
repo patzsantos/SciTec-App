@@ -54,8 +54,9 @@ All levels of user privileges do not have access to the plain text form of the p
 
 ## How to Run Scitec
 
-1) Download the Bulwark Systems package that contains the Python file and requirements. There are two main project folders, namely **cabin** and **scitec**. Make sure that your IDE can run Python 3.11. 
-2) Install requirements
+1) Download the Bulwark Systems package that contains the Python file and requirements. There are two main project folders, namely **cabin** and **scitec**. Make sure that your IDE can run Python 3.11.
+2) Run ```manage.py```.
+3) Install requirements
    ```pip install -r requirements.txt```.
 4) Run your virtual environment
 ```- virtualenv --version```
