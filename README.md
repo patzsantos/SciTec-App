@@ -162,6 +162,8 @@ Rooney, J.W. (2022) Django Rest Framework for Beginners - Simple CRUD API. Avail
 
 ---- 
 
+Other code sources and references: 
+
 Circumeo (2023) Encrypting Data in a Django Application. Available from: https://circumeo.io/blog/entry/encrypting-data-in-a-django-application/ [Accessed 26 May 2024].
 
 Gregory & sunwarr10r. (2019) How to change site title, site header and index title
