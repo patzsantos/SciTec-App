@@ -4,7 +4,7 @@ Welcome to the **SciTec App**, a secure software developed by Bulwark Systems. T
 
 ## Purpose 
 
-This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) postgraduate certificate course of The Unviversity of Essex Online.
+This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) postgraduate certificate course of The University of Essex Online.
 
 Scrum solo, a method wherein only a sole developer implements all the tasks during code development (Moyo & Mnkandla. 2020), was implemented in the creation of this application. Therefore, it is important to take note that some changes from the initial design proposal were applied to this version of SciTec. 
 
