@@ -22,7 +22,7 @@ Django is the chosen framework since it follows the Model-View-Controller (MVC) 
 | A07: 2021- Identification and Authentication | Brute Force Attacks |
 | A09:2021- Security Logging and Monitoring Failures| Denial of Service |
 
-Three of the Open Web Application Security Project (OWASP) top ten web application security risks from 2021(Open Web Application Security Project, 2021), were identifited to classify the security attacks that SciTec is designed to defend against. With the help of OWASP, these following security features are implemented in the SciTec app: 
+Three of the Open Web Application Security Project (OWASP) top ten web application security risks from 2021(Open Web Application Security Project, 2021), were identified to classify the security attacks that SciTec is designed to defend against. With the help of OWASP, these following security features are implemented in the SciTec app: 
 
 **Authorisation and Authentication**
 
