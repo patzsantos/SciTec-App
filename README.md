@@ -96,7 +96,7 @@ Python Software Foundation. (N.D.) unittest- Unit testing framework- Python 3.12
 
 ## Code Credits 
 
-Project was made by following this video: 
+The Scitec App Coding Project was made by following this video: 
 
 Rooney, J.W. (2022) Django Rest Framework for Beginners - Simple CRUD API. Available from: https://www.youtube.com/watch?v=OJdFj5hPAKs&t=8s [Accessed 22 May 2024]. 
 
@@ -105,6 +105,8 @@ Circumeo (2023) Encrypting Data in a Django Application. Available from: https:/
 
 Gregory & sunwarr10r. (2019) How to change site title, site header and index title
 in Django Admin?. Available from: https://stackoverflow.com/a/36251770 [Accessed 25 May 2024]
+
+Held, J. (2024) GitHub - soynatan/django-easy-audit: Yet another Django audit log app, hopefully the simplest one. Available from: https://github.com/soynatan/django-easy-audit [Accessed 27 May 2024]. 
 
 Kumar, M. & Parmentier, B. (2023) How do I change the text "Thanks for spending some quality time with the Web site today." in Django?. Available  https://stackoverflow.com/a/65907636 [Accessed 23 May 2024]
 
