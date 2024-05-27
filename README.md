@@ -4,8 +4,11 @@ Welcome to the SciTec App, a secure software developed by Bulwark Systems to che
 ## Purpose 
 This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) course of The Unviversity of Essex Online.
 
+Scrum solo, a method wherein only a sole developer implements all the tasks during code development ( (Moyo & Mnkandla. 2020) was implemented in the creation of this application. Therefore, it is important to note that some changes from the initial design proposal were applied to this version of SciTec. 
+
 ## Development 
 The program was built using Django 5.0.6 web framework in Python 3.11.9 in the PyCharm 2023.2.6 version. 
+The reasoning behind choosing Django is that it follows the Model-View-Controller (MVC) structure discussed by Pillai (2017), though not exactly the same. Django does not use the exact MVC terminology, since their framework is more commonly as MTV for Model-Template-View. However, it applies the same logic since Django (N.D.a) discusses that view shows the page from the URL, templates present data, and the controller serves as the program dispatching to request the view. 
 
 ## Security Features
 
@@ -45,10 +48,15 @@ Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (D
 
 ## How to Run Scitec
 1) Download the Bulwark Systems package that contains the python file and requirements. Make sure that your IDE can run Python 3.11. 
-2) Install requirements ```pip install -r requirements.txt```
-3) Once installed, open your terminal and run ```python3 manage.py runserver```.
-4) Enter the development server at:  http://127.0.0.1:8000/.
-5) Use these credentials to login:
+2) Install requirements
+   ```pip install -r requirements.txt```
+4) Run your virtual environment
+```- virtualenv --version```
+``` virtualenv my_env```
+4) Once installed, open your terminal and run
+```python3 manage.py runserver```.
+5) Enter the development server at:  http://127.0.0.1:8000/.
+6) Use these credentials to login:
 
 | Username   | Password |
 | ------------------ | ------------- |
@@ -118,6 +126,7 @@ The Scitec App Coding Project was made by following this video:
 Rooney, J.W. (2022) Django Rest Framework for Beginners - Simple CRUD API. Available from: https://www.youtube.com/watch?v=OJdFj5hPAKs&t=8s [Accessed 22 May 2024]. 
 
 ---- 
+
 Circumeo (2023) Encrypting Data in a Django Application. Available from: https://circumeo.io/blog/entry/encrypting-data-in-a-django-application/ [Accessed 26 May 2024].
 
 Gregory & sunwarr10r. (2019) How to change site title, site header and index title
@@ -129,7 +138,11 @@ Lorenz, T. (2019) Proper Unit Tests for Your Django Views.
 Available from: https://blog.bitlabstudio.com/proper-unit-tests-for-your-django-views-b4a1730a922e
 [Accessed on 25 May 2024].
 
+Moyo, S. & Mnkandla, E. (2020) A Novel Lightweight Solo Software Development Methodology With Optimum Security Practices. IEEE Access 8: 33735-33747. DOI: http://dx.doi.org/10.1109/ACCESS.2020.2971000. [Accessed 27 May 2024].
+
 OpenAI. 2024. ChatGPT (May 2024 version). Available at: https://www.openai.com/chatgpt [Accessed 25 May 2024).
+
+Pillai, A.B. (2017) Software Architecture with Python: Design and architect highly scalable, robust, clean, and high performance applications in Python. 1st ed. Birmingham, UK: Packt Publishing. Available from: https://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN=1513359&site=ehost-liv [Accessed 30 March 2024].
 
 Ridgway, A. (2021) Django Testing for Beginners. Available from:
 https://alicecampkin.medium.com/django-testing-for-beginners-146bd285a178
