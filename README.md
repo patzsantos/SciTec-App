@@ -1,5 +1,5 @@
 # SciTec App
-Welcome to the SciTec App, a secure software developed by Bulwark Systems to check and monitor spacecraft cabin environment parameters inside the International Space Station (ISS). 
+Welcome to the SciTec App, a secure software developed by Bulwark Systems to check and monitor the spacecraft cabin environment inside the International Space Station (ISS).
 
 ## Purpose 
 This is the individual coding output of the team [design document](https://github.com/patzsantos/scitecapp/blob/main/Design%20Document/SSDCS_PCOM7E%20March%202024%20Bulwark%20Systems%20%C2%A9%20SciTec%20App%20for%20the%20International%20Space%20Station%20(ISS).docx) developed by Team Bulwark for the Secure Software Development (Computer Science) course of The Unviversity of Essex Online. 
@@ -19,7 +19,8 @@ Three of the Open Web Application Security Project (OWASP) top ten web applicati
 
 **Authorisation and Authentication**
 
-ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (GDPR, N.D.). Therefore, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Their access to SciTec is limited depending on their roles.  
+ScitTec App  values the 'Rights of the data subject', in accordance with General Data Protection Regulation (GDPR) Chapter 3 (GDPR, N.D.). To protect the personal data of users, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. Authentication is done through login using authorised usernames and passwords. Privileges of different user groups are granted based on their account type, as seen in the table below: 
+
 
 | User   | Authorisation |
 | ------------------ | ------------- |
@@ -29,11 +30,17 @@ ScitTec App  values the 'Rights of the data subject', in accordance with General
 
 **Encryption**
 
-The ISS environment database stored in the db.sqlite file uses django-encrypted-model-fields to encrypt data sourced from python cryptograph library (Python Package Index, 2022). 
+The ISS environment database stored in the db.sqlite file uses django-encrypted-model-fields to encrypt data sourced from python cryptograph library (Python Package Index, 2022). When checking the sqlite3 database in the project, the parameter is not displayed in plain form to protect the data from API injections. 
 
-**Hashing**
+**Event Monitoring** 
 
-Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.) 
+CRUD, login, and request events are stored and can be monitored using ```django-easy-edit``` from soynatan (2024). This security feature can alert the superuser of any suspicious activities, such as Denial of Service, during login and processing of records in SciTec.
+
+_Note: This security feature was added last, and is therefore not included in the demo .gifs in [CRUD demonstrations(https://github.com/patzsantos/scitecapp/edit/main/README.md#crud-demonstrations). Rest assured, they are in included in the final version of the application._
+
+**Hashing Passwords**
+
+Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.) to prevent exposure of sensitive data that can lead to unauthorised access to Scitec due to Brute Force Attacks.
 
 ## How to Run Scitec
 1) Download the Bulwark Systems package that contains the python file and requirements. Make sure that your IDE can run Python 3.11. 
@@ -106,8 +113,6 @@ Circumeo (2023) Encrypting Data in a Django Application. Available from: https:/
 Gregory & sunwarr10r. (2019) How to change site title, site header and index title
 in Django Admin?. Available from: https://stackoverflow.com/a/36251770 [Accessed 25 May 2024]
 
-Held, J. (2024) GitHub - soynatan/django-easy-audit: Yet another Django audit log app, hopefully the simplest one. Available from: https://github.com/soynatan/django-easy-audit [Accessed 27 May 2024]. 
-
 Kumar, M. & Parmentier, B. (2023) How do I change the text "Thanks for spending some quality time with the Web site today." in Django?. Available  https://stackoverflow.com/a/65907636 [Accessed 23 May 2024]
 
 Lorenz, T. (2019) Proper Unit Tests for Your Django Views.
@@ -119,6 +124,8 @@ OpenAI. 2024. ChatGPT (May 2024 version). Available at: https://www.openai.com/c
 Ridgway, A. (2021) Django Testing for Beginners. Available from:
 https://alicecampkin.medium.com/django-testing-for-beginners-146bd285a178
 [Accessed 25 May 2024].
+
+soynatan (2024) GitHub - soynatan/django-easy-audit: Yet another Django audit log app, hopefully the simplest one. Available from: https://github.com/soynatan/django-easy-audit [Accessed 27 May 2024]. 
 
 
 
