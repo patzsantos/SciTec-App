@@ -10,7 +10,7 @@ Scrum solo, a method wherein only a sole developer implements all the tasks duri
 
 ## Development 
 
-The program was developedt using **Django 5.0.6** web framework in **Python 3.11.9** in the **PyCharm 2023.2.6** version IDE. 
+The program was developed using the **Django 5.0.6** web framework in **Python 3.11.9**. It was written and run in the **PyCharm 2023.2.6** version IDE. 
 
 Django is the chosen framework since it follows the Model-View-Controller (MVC) structure discussed by Pillai (2017), though not exactly the same. Django does not use the MVC terminology, since their framework is more commonly known as MTV, for **Model-Template-View**. However, it applies the same logic since Django (N.D.a) discusses that the view shows the page from the URL, the templates present data, and the controller serves as the program dispatching to request the view. 
 
