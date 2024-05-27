@@ -125,11 +125,11 @@ Screenshots of initial linter testing, and the remediations performed afterwards
 
 ## Future Improvements to the Code
 
-- Encrypt usernames in the database - This strengthens authorisation and authentication as this extra security layer would prevent exposure of usernames, and is in line with GDPR Chapter 3, 'Rights of the data subject' (GDPR, N.D.)
+- Encrypt usernames in the database - This strengthens authorisation and authentication as this extra security layer would prevent exposure of usernames, and is in line with GDPR Chapter 3, 'Rights of the data subject' (GDPR, N.D.).
 - Use multi factor authentication during login- Based on the team design, this is an extra layer of security that will prevent Brute Force Attacks, as it implements various levels of authentication.
 - Implement locking out of users after a maximum of 3 failed login attempts- Another mitigation based on the team design that is designed to fight off Brute Force Attacks once suspicious user login or activity is detected during event monitoring. 
-- Write more unittests to ensure that the code logic is working correctly
-- Aim for higher linter code rating
+- Write more unittests to ensure that the code logic is working correctly.
+- Aim for a higher linter code rating.
 - Run other linter tests, such as mccabe, to assess code complexity. 
 
 ## Disclaimer
@@ -144,7 +144,11 @@ Django (N.D.b) Password management in Django | Django Documentation | Django. Av
 
 General Data Protection Regulation. (N.D.) Chapter 3 (Art 12-23) Archives. Available from: https://gdpr.eu/tag/chapter-3/ [Accessed 26 May 2024]. 
 
+Moyo, S. & Mnkandla, E. (2020) A Novel Lightweight Solo Software Development Methodology With Optimum Security Practices. _IEEE Access_ 8: 33735-33747. DOI: http://dx.doi.org/10.1109/ACCESS.2020.2971000. [Accessed 27 May 2024].
+
 Open Web Application Security Project. (2021). OWASP Top 10:2021. Available from: https://owasp.org/Top10/ [Accessed 26 May 2024]. 
+
+Pillai, A.B. (2017) _Software Architecture with Python: Design and architect highly scalable, robust, clean, and high performance applications in Python._ 1st ed. Birmingham, UK: Packt Publishing. Available from: https://learning.oreilly.com/library/view/software-architecture-with/9781786468529/?sso_link=yes&sso_link_from=university-of-essex [Accessed 27 May 2024].
 
 Python Package Index. (2022) django-encrypted-model-fields. Available from: https://pypi.org/project/django-encrypted-model-fields/ [Accessed 27 May 2024].
 
@@ -169,11 +173,7 @@ Lorenz, T. (2019) Proper Unit Tests for Your Django Views.
 Available from: https://blog.bitlabstudio.com/proper-unit-tests-for-your-django-views-b4a1730a922e
 [Accessed on 25 May 2024].
 
-Moyo, S. & Mnkandla, E. (2020) A Novel Lightweight Solo Software Development Methodology With Optimum Security Practices. _IEEE Access_ 8: 33735-33747. DOI: http://dx.doi.org/10.1109/ACCESS.2020.2971000. [Accessed 27 May 2024].
-
 OpenAI. 2024. ChatGPT (May 2024 version). Available at: https://www.openai.com/chatgpt [Accessed 25 May 2024).
-
-Pillai, A.B. (2017) Software Architecture with Python: Design and architect highly scalable, robust, clean, and high performance applications in Python. 1st ed. Birmingham, UK: Packt Publishing. Available from: https://learning.oreilly.com/library/view/software-architecture-with/9781786468529/?sso_link=yes&sso_link_from=university-of-essex [Accessed 27 May 2024].
 
 Ridgway, A. (2021) Django Testing for Beginners. Available from:
 https://alicecampkin.medium.com/django-testing-for-beginners-146bd285a178
