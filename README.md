@@ -45,7 +45,7 @@ The ISS environment database stored in the **db.sqlite** file uses ```django-enc
 
 CRUD, login, and request events are stored and can be monitored using ```django-easy-edit``` from soynatan (2024). This event monitoring tool is called **Easy Audit Application**. This security feature can alert the superuser of any suspicious activities during login and processing of records in SciTec that can lead to Denial of Service attacks on the SciTec app.
 
-_Note: This security feature was added last, and therefore cannot be seen in the interface of the software in the demo .gifs in [CRUD demonstrations](https://github.com/patzsantos/scitecapp/edit/main/README.md#crud-demonstrations). Rest assured, the Easy Audit Application is included in the final version of the application, as seen from the screenshot below._
+_Note: This security feature was added last, and therefore cannot be seen in the interface of the software in the demo .gifs in [CRUD demonstrations](https://github.com/patzsantos/scitecapp/blob/main/README.md#crud-demonstrations). Rest assured, the Easy Audit Application is included in the final version of the application, as seen from the screenshot below._
 ![Event Monitoring in the final version of the application](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/event%20monitoring.png)
 
 **Hashing Passwords**
