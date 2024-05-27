@@ -22,11 +22,11 @@ Django is the chosen framework since it follows the Model-View-Controller (MVC) 
 | A07: 2021- Identification and Authentication | Brute Force Attacks |
 | A09:2021- Security Logging and Monitoring Failures| Denial of Service |
 
-Three of the Open Web Application Security Project (OWASP) top ten web application security risks from 2021(Open Web Application Security Project, 2021), were identifited to classify the security attacks and their mitigations that SciTec is designed to defend against. With the help of OWASP, these following security features are implemented in the SciTec app: 
+Three of the Open Web Application Security Project (OWASP) top ten web application security risks from 2021(Open Web Application Security Project, 2021), were identifited to classify the security attacks that SciTec is designed to defend against. With the help of OWASP, these following security features are implemented in the SciTec app: 
 
 **Authorisation and Authentication**
 
-ScitTec App  values the _'Rights of the data subject'_, in accordance with General Data Protection Regulation (GDPR) Chapter 3 (General Data Protection Regulation, N.D.). To protect the personal data of users, as well as API injections, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. 
+ScitTec App values the _'Rights of the data subject'_, in accordance with the General Data Protection Regulation (GDPR) Chapter 3 (General Data Protection Regulation, N.D.). To protect the personal data of users, as well as API injections, the application can only be accessed by authorised ISS software system administrators known as the superuser, astronauts, scientists, and trainees. 
 
 Authentication is done through login of only those with authorised usernames and passwords. The privileges of different user groups are granted based on their account type, as seen in the table below: 
 
@@ -39,7 +39,7 @@ Authentication is done through login of only those with authorised usernames and
 
 **Encryption**
 
-The ISS environment database stored in the **db.sqlite** file uses ```django-encrypted-model-fields``` that is sourced from Python cryptograph library (Python Package Index, 2022), to encrypt data. When checking the sqlite3 database in the project, the parameter is not displayed in plain text form to protect the data from API injections. 
+The ISS environment database stored in the **db.sqlite** file uses ```django-encrypted-model-fields``` that is sourced from the Python cryptograph library (Python Package Index, 2022), to encrypt data. When checking the sqlite3 database in the project, the parameter is not displayed in plain text form to protect the data from API injections. 
 
 **Event Monitoring** 
 
@@ -77,11 +77,11 @@ Please refer to the [Authorisation and Authentication](https://github.com/patzsa
 
 **Superuser:**
 
-_1) Create:_ Superusers can add users, group, cabin environment, and range. They are the only users who can control and assign the authorisations of groups. They are also the only ones who can manage the user database. 
+_1) Create:_ Superusers can add users, groups, cabin environment, and range. They are the only users who can control and assign the authorisations of groups. They are also the only ones who can manage the user database. 
 
 ![Create](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/create.gif)
 
-_2) Read:_ Superusers can view users, groups, and spacecraft cabin environment data. As mentioned in the [Event Monitoring](https://github.com/patzsantos/scitecapp/blob/main/README.md#security-features) in the Security Features section, only the superusers can view the event monitoring application called 'Easy Audit'.
+_2) Read:_ Superusers can view users, groups, and spacecraft cabin environment data. As mentioned in [Event Monitoring](https://github.com/patzsantos/scitecapp/blob/main/README.md#security-features) in the Security Features section, only the superusers can view the event monitoring application called 'Easy Audit'.
    
 ![Read](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/read.gif)
 
@@ -112,13 +112,13 @@ Unit tests were done using **Django test cases**, which according to Python Soft
 
 Upon deployment of the software, all tests have passed. Proofs of successfully ran cabin and scitec tests can be found in the [Testing Documentation](https://github.com/patzsantos/scitecapp/tree/main/Testing%20Documentation) folder, but are attached here as well: 
 
-Cabin folder test case results: 
+cabin folder test case results: 
 ![cabin test](https://github.com/patzsantos/scitecapp/blob/main/Testing%20Documentation/django%20cabin%20test.png)
 
-Scitec folder test case results: 
+scitec folder test case results: 
 ![scitec test](https://github.com/patzsantos/scitecapp/blob/main/Testing%20Documentation/django%20scitec%20test.png)
 
-Linters were also ran to improve code. The three linters used were **pylama, flake8,** and **pylint**. After the initial testing, remediations were performed to further improve the code quality. Pylama and flake8 were more focused on coding style and structure. Both pylama and flake8 tests were cleared. Pylint was more time-consuming. Unfortunately, due to time constraints, the developer was unable to significantly raise the code rating of the cabin project. 
+Linters were also ran to improve the code. The three linters used were **pylama, flake8,** and **pylint**. After the initial testing, remediations were performed to further improve the code quality. Pylama and flake8 were more focused on coding style and structure. Both pylama and flake8 tests were cleared. Unfortunately, due to time constraints, the developer was unable to significantly raise the code rating of the cabin project during the pylint tests. 
 
 Screenshots of initial linter testing, and the remediations performed afterwards, can be found in the 
 [Testing Documentation](https://github.com/patzsantos/scitecapp/tree/main/Testing%20Documentation) folder. 
