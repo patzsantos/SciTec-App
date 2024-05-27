@@ -24,7 +24,7 @@ ScitTec App  values the 'Rights of the data subject', in accordance with General
 
 | User   | Authorisation |
 | ------------------ | ------------- |
-| Superusers | Can create, read, update, and delete (CRUD) account users, groups, and ISS cabin environment health checks. |
+| Superusers | Can create, read, update, and delete (CRUD) account users, groups, and ISS cabin environment health checks. They are the only users with access to the Easy Audit Application, which is used for event monitoring. |
 | Astronauts and Scientists | Can perform CRUD on ISS cabin environment health checks. They can view the groups and users, but cannot create, update, and delete them. |
 | Trainees| Can only view the ISS cabin environment health checks. |
 
@@ -37,10 +37,11 @@ The ISS environment database stored in the db.sqlite file uses django-encrypted-
 CRUD, login, and request events are stored and can be monitored using ```django-easy-edit``` from soynatan (2024). This security feature can alert the superuser of any suspicious activities, such as Denial of Service, during login and processing of records in SciTec.
 
 _Note: This security feature was added last, and is therefore not included in the demo .gifs in [CRUD demonstrations(https://github.com/patzsantos/scitecapp/edit/main/README.md#crud-demonstrations). Rest assured, they are in included in the final version of the application._
+![Event Monitoring in the final version of the application](https://github.com/patzsantos/scitecapp/blob/main/demo.screenshots/event%20monitoring.png)
 
 **Hashing Passwords**
 
-Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.) to prevent exposure of sensitive data that can lead to unauthorised access to Scitec due to Brute Force Attacks.
+Django automatically hashes password using SHA-256 using the PBKDF2 algorithm (Django, N.D.) to prevent exposure of sensitive data that can lead to unauthorised access to Scitec due to Brute Force Attacks. All levels of user privileges do not have access to the string form of the passwords, including their own. 
 
 ## How to Run Scitec
 1) Download the Bulwark Systems package that contains the python file and requirements. Make sure that your IDE can run Python 3.11. 
